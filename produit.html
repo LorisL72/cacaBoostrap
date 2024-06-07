@@ -7,60 +7,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produit</title>
     <link rel="stylesheet" href="bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #eef4fd;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            max-width: 90%;
+            width: 1200px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-details {
+            padding: 20px;
+        }
+
+        .product-rating {
+            color: #ffd700;
+        }
+
+        .product-info {
+            margin-bottom: 20px;
+        }
+
+        .btn-add-to-cart {
+            background-color: #ff66a5;
+            color: white;
+            width: 100%;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #ff3385;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .quantity-control input {
+            width: 60px;
+            text-align: center;
+        }
+
+        .bg-image {
+            background-color: #eef4fd;
+            position: relative;
+            padding: 20px;
+        }
+
+        .bg-image::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgb(52, 38, 214) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            left: 50%;
+            top: 70%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .image-wrapper {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            transform: rotate(-10deg);
+        }
+    </style>
 </head>
 
 <body>
-<style>
-    body {
-        background-color: #f4f4f9;
-        color: #333;
-    }
-
-    .product-image {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-    .product-details {
-        padding: 20px;
-    }
-
-    .product-rating {
-        color: #ffd700;
-    }
-
-    .product-info {
-        margin-bottom: 20px;
-    }
-
-    .btn-add-to-cart {
-        background-color: #ff66a5;
-        color: white;
-    }
-
-    .btn-add-to-cart:hover {
-        background-color: #ff3385;
-    }
-
-    .quantity-control {
-        display: flex;
-        align-items: center;
-    }
-
-    .quantity-control input {
-        width: 60px;
-        text-align: center;
-    }
-</style>
-</head>
-
-<body>
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6">
-            <a href="index.html" class="text-muted mb-3 d-block">← Retour</a>
-            <img src="path_to_image.png" alt="La Blast" class="product-image">
+    <div class="container">
+        <div class="bg-image">
+            <a href="index.html" class="text-muted mb-3 d-block text-decoration-none">← retour</a>
+            <div class="image-wrapper">
+                <img src="images/Boisson.png" alt="La Blast" class="product-image">
+            </div>
         </div>
         <div class="col-md-6 product-details">
             <div class="product-info">
@@ -94,21 +142,20 @@
                 <input type="number" id="quantity" class="form-control mx-2" value="1" min="1">
                 <button class="btn btn-outline-secondary" onclick="changeQuantity(1)">+</button>
             </div>
-            <button class="btn btn-add-to-cart mt-3">ADD TO CART</button>
+            <button class="btn btn-add-to-cart mt-3">AJOUTER AU PANIER</button>
         </div>
     </div>
-</div>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-<script>
-    function changeQuantity(amount) {
-        const quantityInput = document.getElementById('quantity');
-        let currentValue = parseInt(quantityInput.value);
-        currentValue += amount;
-        if (currentValue < 1) currentValue = 1;
-        quantityInput.value = currentValue;
-    }
-</script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeQuantity(amount) {
+            const quantityInput = document.getElementById('quantity');
+            let currentValue = parseInt(quantityInput.value);
+            currentValue += amount;
+            if (currentValue < 1) currentValue = 1;
+            quantityInput.value = currentValue;
+        }
+    </script>
 </body>
 
 </html>
