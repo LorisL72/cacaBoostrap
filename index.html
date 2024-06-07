@@ -12,7 +12,7 @@
             background: linear-gradient(180deg, #DB8EE1 0%, #9B9BFF 100%);
             color: white;
             height: 100%;
-            background-repeat: no-repeat;   
+            background-repeat: no-repeat;
             background-attachment: fixed;
         }
         .btn-custom {
@@ -22,55 +22,116 @@
         .btn-custom:hover {
             background-color: #f1f1f1;
         }
+        .section-title {
+            color: #9B9BFF;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .card-custom {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">BuzzBlast</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Nos boissons</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">À Propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Inscription</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-custom" href="#">Connexion</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6">
-                <h1 class="display-4 fw-bold">UN GOUT DELICIEUX SANS CHICHI</h1>
-                <p>Découvrez BuzzBlast, la marque qui réinvente les boissons énergisantes. Sans sucre ou avec sucre, nos boissons exclusives sont proposées à petit prix et livrables gratuitement partout dans le monde. Profitez de l'énergie à l'état pur, où que vous soyez !</p>
-                <a href="#" class="btn btn-custom btn-lg">Savourez maintenant</a>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="path_to_image.png" alt="BuzzBlast" class="img-fluid">
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">BuzzBlast</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Nos boissons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">À Propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Inscription</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-custom" href="#">Connexion</a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="display-4 fw-bold">UN GOUT DELICIEUX SANS CHICHI</h1>
+            <p>Découvrez BuzzBlast, la marque qui réinvente les boissons énergisantes. Sans sucre ou avec sucre, nos boissons exclusives sont proposées à petit prix et livrables gratuitement partout dans le monde. Profitez de l'énergie à l'état pur, où que vous soyez !</p>
+            <a href="#" class="btn btn-custom btn-lg">Savourez maintenant</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="path_to_image.png" alt="BuzzBlast" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="section-title">Comment ça marche</h2>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <img src="path_to_order_icon.png" alt="Vous commandez" class="img-fluid mb-3">
+            <h3>Vous commandez</h3>
+            <p>Choisissez parmi notre large gamme de boissons et passez votre commande facilement.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="path_to_delivery_icon.png" alt="Nous livrons" class="img-fluid mb-3">
+            <h3>Nous livrons</h3>
+            <p>Nous livrons vos boissons directement à votre porte, où que vous soyez.</p>
+        </div>
+        <div class="col-md-4">
+            <img src="path_to_enjoy_icon.png" alt="Vous dégustez" class="img-fluid mb-3">
+            <h3>Vous dégustez</h3>
+            <p>Profitez de vos boissons BuzzBlast et rechargez votre énergie à tout moment.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="section-title">Nos boissons</h2>
+    <div class="row text-center">
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <img src="path_to_drink_image.png" class="card-img-top" alt="Le blast">
+                <div class="card-body">
+                    <h5 class="card-title">Le blast</h5>
+                    <p class="card-text">1.30€</p>
+                    <a href="#" class="btn btn-custom">Ajouter</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <img src="path_to_drink_image.png" class="card-img-top" alt="Le blast">
+                <div class="card-body">
+                    <h5 class="card-title">Le blast</h5>
+                    <p class="card-text">1.30€</p>
+                    <a href="#" class="btn btn-custom">Ajouter</a>
+                </div>
+            </div>
+        </div>
+        <!-- Répétez les colonnes pour chaque produit -->
+    </div>
+    <div class="row text-center mt-4">
+        <a href="#" class="btn btn-custom btn-lg">Voir plus</a>
+    </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
