@@ -15,6 +15,42 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .tabs div {
+            margin: 0 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .tabs .active {
+            border-bottom: 2px solid #000;
+        }
+
+        .custom-container {
+            background-color: #ffdce5; /* Pink background color */
+            padding: 20px;
+            width: 100%;
+            max-width: 100%;
+        }
+        .custom-box {
+            background-color: white;
+            width: 80%;
+            height: 300px; /* Height to match the screenshot */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+        }
+        .custom-box img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
         .btn-custom {
             background-color: white;
             color: black;
@@ -28,12 +64,28 @@
             margin-bottom: 50px;
         }
         .card-custom {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            width: 250px;
+            position: relative;
+            color: black;
+        }
+        .card-img-top {
+            width: 50%;
+            height: auto;
+            margin: 10px auto;
         }
         .bg-pink-500{
             background-color: #FFC0CB;
+
+        }
+        .text-pink-500{
+            color: #FFC0CB;
 
         }
         .bg-grey{
@@ -49,8 +101,16 @@
         }
         .ligne-sans-boostrap-pck-c-nul{
             width: 19rem;
-            top: 58rem;
-            left: 26rem;
+           padding-bottom: 9rem;
+        }
+        .width-box{
+            width: 18%;
+        }
+        .logo-socials{
+            width: 30%;
+        }
+        .logo-heart{
+            width: 10%;
         }
     </style>
 </head>
@@ -102,12 +162,11 @@
 
 <div class="container mt-5 bg-white w-100 mw-100 p-5">
     <h2 class="section-title">Comment ça marche</h2>
+    <h6 class="text-black font-size-small text-center">Rapide, efficace et énergisant !</h6>
 
     <div class="d-flex">
-
-
-        <div class="row text-center">
-            <div class="col-md-4 text-black d-flex flex-column align-items-center">
+        <div class="row text-center flex-nowrap">
+            <div class="col-md-4 text-black d-flex flex-column align-items-center width-box">
                 <div class="bg-grey p-3 m-3 rounded-2 w-45 h-45 flex d-flex justify-content-center align-items-center">
                     <svg width="35" height="35" viewBox="0 0 48 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -115,12 +174,11 @@
                               fill="#9B5DE5"/>
                     </svg>
                 </div>
-                <img src="images/Vector-line.svg"  class="ligne-sans-boostrap-pck-c-nul"/>
-
                 <h3>Vous commandez</h3>
                 <p>Choisissez parmi notre large gamme de boissons et passez votre commande facilement.</p>
             </div>
-            <div class="col-md-4 text-black d-flex flex-column align-items-center">
+            <img src="images/Vector-line.svg"  class="ligne-sans-boostrap-pck-c-nul"/>
+            <div class="col-md-4 text-black d-flex flex-column align-items-center width-box">
                 <div class="bg-grey p-3 m-3 rounded-2 w-45 h-45 flex d-flex justify-content-center align-items-center">
                     <svg width="35" height="35" viewBox="0 0 48 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -128,13 +186,15 @@
                               fill="#9B5DE5"/>
                     </svg>
                 </div>
-                <img src="images/Vector-line.svg"  class="ligne-sans-boostrap-pck-c-nul"/>
+
 
 
                 <h3>Nous livrons</h3>
                 <p>Nous livrons vos boissons directement à votre porte, où que vous soyez.</p>
             </div>
-            <div class="col-md-4 text-black d-flex flex-column align-items-center">
+            <img src="images/Vector-line.svg"  class="ligne-sans-boostrap-pck-c-nul"/>
+
+            <div class="col-md-4 text-black d-flex flex-column align-items-center width-box">
                 <div class="bg-grey p-3 m-3 rounded-2 w-45 h-45 flex d-flex justify-content-center align-items-center">
                     <svg width="35" height="35" viewBox="0 0 48 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -153,64 +213,84 @@
 
 <div class="container mt-5">
     <h2 class="section-title text-black">Nos boissons</h2>
+    <p class="text-center">Moins de sucre, plus de goût et un prix réduit !</p>
+    <div class="tabs">
+        <div class="active">Populaire</div>
+        <div>Sans sucre</div>
+        <div>Accessoires</div>
+        <div>Exclusif</div>
+    </div>
     <div class="row text-center justify-content-center">
         <div class="col-md-3 m-3">
-            <div class="card card-custom">
-                <img src="images/Boisson.png" class="card-img-top" alt="Le blast">
-                <div class="card-body">
+            <div class="card card-custom pt-4">
+                <div class="d-flex flex-row justify-content-between">
                     <h5 class="card-title">Le blast</h5>
-                    <p class="card-text">1.30€</p>
-                    <a href="#" class="btn btn-custom">Ajouter</a>
+                    <img src="images/heart.svg" class="logo-heart"></div>
+                <img src="images/Boisson.png" class="card-img-top" alt="Le blast">
+                <div class="card-body d-flex flex-row justify-content-between">
+
+                    <p class="card-text">1.20€</p>
+                    <a href="#" class="btn btn-custom">Acheter</a>
                 </div>
             </div>
         </div>
         <div class="col-md-3 m-3">
-            <div class="card card-custom">
+            <div class="card card-custom pt-4">
+                <div class="d-flex flex-row justify-content-between"><h5 class="card-title">Le blast</h5>
+                    <img src="images/heart.svg" class="logo-heart"></div>
                 <img src="images/Boisson.png" class="card-img-top" alt="Le blast">
-                <div class="card-body">
-                    <h5 class="card-title">Le blast</h5>
-                    <p class="card-text">1.30€</p>
-                    <a href="#" class="btn btn-custom">Ajouter</a>
+                <div class="card-body d-flex flex-row justify-content-between">
+
+                    <p class="card-text">1.20€</p>
+                    <a href="#" class="btn btn-custom">Acheter</a>
                 </div>
             </div>
         </div>
         <div class="col-md-3 m-3">
-            <div class="card card-custom">
+            <div class="card card-custom pt-4">
+                <div class="d-flex flex-row justify-content-between"><h5 class="card-title">Le blast</h5>
+                    <img src="images/heart.svg" class="logo-heart"></div>
                 <img src="images/Boisson.png" class="card-img-top" alt="Le blast">
-                <div class="card-body">
-                    <h5 class="card-title">Le blast</h5>
-                    <p class="card-text">1.30€</p>
-                    <a href="#" class="btn btn-custom">Ajouter</a>
+                <div class="card-body d-flex flex-row justify-content-between">
+
+                    <p class="card-text">1.20€</p>
+                    <a href="#" class="btn btn-custom">Acheter</a>
                 </div>
             </div>
         </div>
         <div class="col-md-3 m-3">
-            <div class="card card-custom">
+            <div class="card card-custom pt-4">
+                <div class="d-flex flex-row justify-content-between"><h5 class="card-title">Le blast</h5>
+                    <img src="images/heart.svg" class="logo-heart"></div>
                 <img src="images/Boisson.png" class="card-img-top" alt="Le blast">
-                <div class="card-body">
-                    <h5 class="card-title">Le blast</h5>
-                    <p class="card-text">1.30€</p>
-                    <a href="#" class="btn btn-custom">Ajouter</a>
+                <div class="card-body d-flex flex-row justify-content-between">
+
+                    <p class="card-text">1.20€</p>
+                    <a href="#" class="btn btn-custom">Acheter</a>
                 </div>
             </div>
         </div>
         <div class="col-md-3 m-3">
-            <div class="card card-custom">
+            <div class="card card-custom pt-4">
+                <div class="d-flex flex-row justify-content-between"><h5 class="card-title">Le blast</h5>
+                    <img src="images/heart.svg" class="logo-heart"></div>
                 <img src="images/Boisson.png" class="card-img-top" alt="Le blast">
-                <div class="card-body">
-                    <h5 class="card-title">Le blast</h5>
-                    <p class="card-text">1.30€</p>
-                    <a href="#" class="btn btn-custom">Ajouter</a>
+                <div class="card-body d-flex flex-row justify-content-between">
+
+                    <p class="card-text">1.20€</p>
+                    <a href="#" class="btn btn-custom">Acheter</a>
                 </div>
             </div>
         </div>
         <div class="col-md-3 m-3">
-            <div class="card card-custom">
+            <div class="card card-custom pt-4">
+                <div class="d-flex flex-row justify-content-between"><h5 class="card-title">Le blast</h5>
+                    <img src="images/heart.svg" class="logo-heart"></div>
                 <img src="images/Boisson.png" class="card-img-top" alt="Le blast">
-                <div class="card-body">
-                    <h5 class="card-title">Le blast</h5>
-                    <p class="card-text">1.30€</p>
-                    <a href="#" class="btn btn-custom">Ajouter</a>
+                <div class="card-body d-flex flex-row justify-content-between">
+
+                    <p class="card-text">1.20€</p>
+                    <a href="#" class="btn btn-custom">Acheter</a>
                 </div>
             </div>
         </div>
@@ -219,8 +299,9 @@
         <a href="#" class="btn btn-custom btn-lg">Voir plus</a>
     </div>
 </div>
+
 <div class="container mt-5 text-black p-5 bg-white w-100 mw-100">
-    <h2 class="section-title text-center">Informations</h2>
+    <h2 class="section-title text-center text-pink-500">Informations</h2>
     <div class="row">
         <div class="col-md-6">
             <img src="images/information_image.png" alt="Information Image" class="img-fluid">
@@ -246,9 +327,23 @@
         </div>
     </div>
 </div>
+<div class="container custom-container ">
+    <div class="d-flex justify-content-around">
+        <div class="">
+            <div class="custom-box">
+                <img src="your-image-left.png" alt="Image Left">
+            </div>
+        </div>
+        <div class="">
+            <div class="custom-box">
+                <img src="your-image-right.png" alt="Image Right">
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="container mt-5 text-black">
-    <h2 class="section-title text-center">Des milliers de clients ravis</h2>
+<div class="container text-black bg-white mw-100 w-100 p-5">
+    <h2 class="section-title text-center text-pink-500">Des milliers de clients ravis</h2>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -289,15 +384,15 @@
 
 
 <footer class="footer">
-    <div class="container mt-5 bg-pink-500 w-100 mw-100 p-5 text-black">
+    <div class="container pt-5 bg-pink-500 w-100 mw-100 p-5 text-black">
         <div class="row">
             <div class="col-md-3">
                 <h5>BuzzBlast</h5>
                 <p>Notre vision est simple, vous aider à gagner en énergie toute la journée !</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                <div class="social-icons m-2 d-flex flex-row">
+                    <div class="p-2"><a href="#"><img src="images/facebook.png" alt="facebook" class="logo-socials "/> </a></div>
+                    <div class="p-2"><a href="#"><img src="images/twitter.png" alt="twitter" class="logo-socials "/> </a></div>
+                    <div class="p-2"><a href="#"><img src="images/instagram.png" alt="instagram" class="logo-socials "/> </a></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -328,7 +423,7 @@
                 </ul>
             </div>
         </div>
-        <div class="row mt-4">
+        <div class="row  border-1 border-top">
             <div class="col-md-6">
                 <p>©2024 BuzzBlast. All rights reserved by Adrien et Loris</p>
             </div>
