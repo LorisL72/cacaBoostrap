@@ -21,7 +21,8 @@
             background-size: cover;
             border-radius: 15px;
             overflow: hidden;
-            max-width: 900px;
+            max-width: 1200px;
+            height: 70%;
             width: 100%;
             position: relative;
             padding: 20px;
@@ -33,16 +34,13 @@
             height: 300px;
             width: 70%;
             position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 100;   
+            top: 8px;
+            left: 10px;
+            z-index: 100;
         }
 
         .can-form {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 200px;
+            width: 40%;
             z-index: 2;
         }
 
@@ -51,7 +49,6 @@
             padding: 20px;
             border-radius: 0 10px 10px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-left: 200px;
             position: relative;
             z-index: 3;
         }
@@ -59,21 +56,34 @@
         .address {
             margin-top: 10px;
             font-size: 0.9rem;
+            text-align: right;
         }
 
         .address a {
+            color: #9C5FE5 !important;
+            font-weight: bold;
             text-decoration: none;
-            color: #6c63ff;
+            position: relative;
+        }
+
+        .address a::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -1px;
+            width: 50%;
+            height: 6px;
+            background-color: #FBCCCF;
         }
 
         .btn-custom {
-            background-color: #F9B7BC;
+            background-color: #F698D0;
             color: white;
             border: none;
         }
 
         .btn-custom:hover {
-            background-color: #F9B7BC;
+            background-color: #F698D0;
             color: white;
         }
 
@@ -91,36 +101,46 @@
         .btn-back:hover {
             color: #e90da4;
         }
+        .colstrong{
+            color: #9C5FE5 !important;
+        }
     </style>
 </head>
 
 <body>
     <div class="card">
         <button class="btn-back">&larr; retour</button>
-        <div class="title"></div>
-        <img src="images/CanetteForm.png" alt="Canette" class="can-form">
-        <div class="form-container">
-            <div class="address mt-3">
-                <strong>Retrouvez-nous</strong> au 12 Rue Georges Mandel, 49000 Angers
-                <br>
-                <a href="https://www.google.com/maps?q=12+Rue+Georges+Mandel,+49000+Angers" target="_blank">Regarder sur map</a>
+        <div class="w-100 h-100 d-flex justify-content-around align-items-center">
+
+
+            <div class="title"></div>
+            <img src="images/CanetteForm.png" alt="Canette" class="can-form">
+
+            <div class="form-container">
+                <div class="address mt-3">
+                    <strong class="colstrong">Retrouvez-nous</strong> au 12 Rue Georges Mandel,<br> 49000 Angers
+                    <br>
+                    <a href="https://www.google.com/maps?q=12+Rue+Georges+Mandel,+49000+Angers" class="colstrong" target="_blank">Regarder
+                        sur map</a>
+                </div>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-custom w-100">Envoyer</button>
+                </form>
             </div>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-custom w-100">Envoyer</button>
-            </form>
         </div>
+
     </div>
 
     <script src="bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
