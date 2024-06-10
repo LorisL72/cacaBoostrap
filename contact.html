@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous Contacter</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-image: url('images/bgcontact.png');
+            background-size: cover;
+            border-radius: 15px;
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            padding: 20px;
+        }
+
+        .title {
+            background: url('images/LetsTalk.png') no-repeat;
+            background-size: contain;
+            height: 300px;
+            width: 70%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;   
+        }
+
+        .can-form {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            z-index: 2;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: 200px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .address {
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .address a {
+            text-decoration: none;
+            color: #6c63ff;
+        }
+
+        .btn-custom {
+            background-color: #F9B7BC;
+            color: white;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #F9B7BC;
+            color: white;
+        }
+
+        .btn-back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+            z-index: 4;
+        }
+
+        .btn-back:hover {
+            color: #e90da4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <button class="btn-back">&larr; retour</button>
+        <div class="title"></div>
+        <img src="images/CanetteForm.png" alt="Canette" class="can-form">
+        <div class="form-container">
+            <div class="address mt-3">
+                <strong>Retrouvez-nous</strong> au 12 Rue Georges Mandel, 49000 Angers
+                <br>
+                <a href="https://www.google.com/maps?q=12+Rue+Georges+Mandel,+49000+Angers" target="_blank">Regarder sur map</a>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-custom w-100">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
